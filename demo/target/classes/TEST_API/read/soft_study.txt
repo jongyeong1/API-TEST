@@ -1,0 +1,126 @@
+Software processes are the activities involved in producing a software system. Software process models are abstract representations of these processes.
+General process models describe the organization of software processes.
+Examples of these general models include the ‘waterfall’ model, incremental development, and reuse-oriented development.
+Requirements engineering is the process of developing a software specification.
+
+Design and implementation processes are concerned with transforming a requirements specification into an executable software system.
+Software validation is the process of checking that the system conforms to its specification and that it meets the real needs of the users of the system.
+Software evolution takes place when you change existing software systems to meet new requirements. The software must evolve to remain useful.
+Processes should include activities such as prototyping and incremental delivery to cope with change.
+
+Processes may be structured for iterative development and delivery so that changes may be made without disrupting the system as a whole.
+The principal approaches to process improvement are agile approaches, geared to reducing process overheads, and maturity-based approaches based on better process management and the use of good software engineering practice.
+The SEI process maturity framework identifies maturity levels that essentially correspond to the use of good software engineering practice.
+
+What is software process?
+A structured set of activities required to develop a software system.
+
+Many different software processes but all involve
+Specification (명세화) defining what the system should do
+Design and implementation (개발) defining the organization of the system and implementing the system
+Validation (검증) checking that it does what the customer wants
+Evolution (진화) changing the system in response to changing customer needs.
+
+소프트웨어 프로세스는 소프트웨어 시스템을 생산하는 데 관련된 활동입니다. 소프트웨어 프로세스 모델은 이러한 프로세스를 추상적으로 표현한 것입니다.
+일반 프로세스 모델은 소프트웨어 프로세스의 구성을 설명합니다.
+이러한 일반 모델의 예로는 '폭포수' 모델, 점진적 개발, 재사용 지향 개발 등이 있습니다.
+요구공학은 소프트웨어 사양을 개발하는 과정이다.
+
+설계 및 구현 프로세스는 요구사항 사양을 실행 가능한 소프트웨어 시스템으로 변환하는 것과 관련이 있습니다.
+소프트웨어 검증은 시스템이 사양을 준수하고 시스템 사용자의 실제 요구 사항을 충족하는지 확인하는 프로세스입니다.
+새로운 요구 사항을 충족하기 위해 기존 소프트웨어 시스템을 변경할 때 소프트웨어 발전이 이루어집니다. 소프트웨어가 계속 유용하려면 발전해야 합니다.
+프로세스에는 변화에 대처하기 위한 프로토타입 제작 및 증분 납품과 같은 활동이 포함되어야 합니다.
+
+프로세스는 시스템 전체를 중단하지 않고 변경이 이루어질 수 있도록 반복적인 개발 및 제공을 위해 구조화될 수 있습니다.
+프로세스 개선을 위한 주요 접근 방식은 프로세스 오버헤드를 줄이기 위한 민첩한 접근 방식과 더 나은 프로세스 관리 및 우수한 소프트웨어 엔지니어링 관행을 기반으로 하는 성숙도 기반 접근 방식입니다.
+SEI 프로세스 성숙도 프레임워크는 기본적으로 우수한 소프트웨어 엔지니어링 관행의 사용에 해당하는 성숙도 수준을 식별합니다.
+
+소프트웨어 프로세스란 무엇입니까?
+소프트웨어 시스템을 개발하는 데 필요한 구조화된 활동 세트입니다.
+
+다양한 소프트웨어 프로세스가 있지만 모두 관련되어 있습니다.
+시스템이 수행해야 하는 작업을 정의하는 사양(명세화)
+시스템의 구성을 정의하고 시스템을 구현하는 설계 및 구현(개발)
+고객이 원하는 대로 작동하는지 확인하는 검증(검증)
+변화하는 고객의 요구에 맞춰 시스템을 바꾸는 진화(진화)입니다.
+
+  계획서 요구사항분석서  설계서       원시코드  실행파일테스트보고서
+계획 - 요구사항분석 - 설계 - 구현(개발) - 테스트 - 유지보수
+
+
+v모델 
+The four basic process activities of 1) specification, 2) development, 3) validation and 4) evolution
+
+
+Agile methods are incremental development methodsthat focus on rapid software development, frequent releases of the software, reducing process overheads by minimizing documentation and producing high-quality code.
+Agile development practices include
+User stories for system specification
+Frequent releases of the software,
+Continuous software improvement
+Test-first development
+Customer participation in the development team.
+
+Scrum is an agile method that provides a project management framework.
+It is centred round a set of sprints, which are fixed time periods when a system increment is developed.
+Many practical development methods are a mixture of plan-based and agile development.
+Scaling agile methods for large systems is difficult.
+Large systems need up-front design and some documentation and organizational practice may conflict with the informality of agile approaches.
+1) 사양, 2) 개발, 3) 검증, 4) 진화의 네 가지 기본 프로세스 활동
+
+
+민첩한 방법은 신속한 소프트웨어 개발, 소프트웨어의 빈번한 릴리스, 문서화 최소화 및 고품질 코드 생성을 통한 프로세스 오버헤드 감소에 초점을 맞춘 점진적인 개발 방법입니다.
+민첩한 개발 관행에는 다음이 포함됩니다.
+시스템 사양에 대한 사용자 스토리
+소프트웨어의 빈번한 릴리스,
+지속적인 소프트웨어 개선
+테스트 우선 개발
+개발팀에 고객 참여.
+
+스크럼은 프로젝트 관리 프레임워크를 제공하는 민첩한 방법입니다.
+이는 시스템 증분이 개발되는 고정된 기간인 스프린트 세트를 중심으로 이루어집니다.
+많은 실제 개발 방법에는 계획 기반 개발과 민첩한 개발이 혼합되어 있습니다.
+대규모 시스템의 경우 Agile 방법을 확장하는 것은 어렵습니다.
+대규모 시스템에는 선행 설계가 필요하며 일부 문서 및 조직 관행은 애자일 접근 방식의 비공식성과 충돌할 수 있습니다.
+
+
+
+소프트웨어 엔지니어링
+소프트웨어 개발기법
+리스크관리
+인력관리
+그룹관리(팀워크)
+팀프 조직화
+
+각 챕터별 키포인트 학습
+기법 확인
+
+조직구성 - 4개
+
+
+DevOps is a software development methodology using iterative mechanism Interconnect Development(Dev), Operations(Ops), and user feedbacks.
+DevOps Process consists Plan, Code, Build, Test(Verify), Release, Deploy, Operate (configure infrastructure), and Monitor.
+A DevOps toolchain is a collection of tools, often from a variety of vendors, that operate DevOps process
+Ultimately the goals of agile and DevOps are the same that is enhancing the speed and quality of software development, and it makes very little sense to talk about one without the other.
+
+Good project management is essential if software engineering projects are to be developed on schedule and within budget.
+Software management is distinct from other engineering management. Software is intangible. Projects may be novel or innovative with no body of experience to guide their management. Software processes are not as mature as traditional engineering processes.
+Risk management involves identifying and assessing project risks to establish the probability that they will occur and the consequences for the project if that risk does arise. You should make plans to avoid, manage or deal with likely risks if or when they arise.
+
+People management involves choosing the right people to work on a project and organizing the team and its working environment.
+People are motivated by interaction with other people, the recognition of management and their peers, and by being given opportunities for personal development.
+Software development groups should be fairly small and cohesive. The key factors that influence the effectiveness of a group are the people in that group, the way that it is organized and the communication between group members.
+Communications within a group are influenced by factors such as the status of group members, the size of the group, the gender composition of the group, personalities and available communication channels.
+
+DevOps는 상호 연결 개발(Dev), 운영(Ops) 및 사용자 피드백을 반복하는 메커니즘을 사용하는 소프트웨어 개발 방법론입니다.
+DevOps 프로세스는 계획, 코드, 빌드, 테스트(검증), 릴리스, 배포, 운영(인프라 구성), 모니터링으로 구성됩니다.
+DevOps 도구 체인은 DevOps 프로세스를 운영하는 다양한 공급업체의 도구 모음입니다.
+궁극적으로 Agile과 DevOps의 목표는 소프트웨어 개발의 속도와 품질을 향상시키는 것과 동일하며, 둘 중 하나를 빼놓고 이야기하는 것은 거의 의미가 없습니다.
+
+소프트웨어 엔지니어링 프로젝트를 일정과 예산 범위 내에서 개발하려면 좋은 프로젝트 관리가 필수적입니다.
+소프트웨어 관리는 다른 엔지니어링 관리와 다릅니다. 소프트웨어는 무형입니다. 프로젝트는 관리를 안내할 경험이 전혀 없어도 참신하거나 혁신적일 수 있습니다. 소프트웨어 프로세스는 기존 엔지니어링 프로세스만큼 성숙하지 않습니다.
+위험 관리에는 프로젝트 위험을 식별하고 평가하여 위험이 발생할 가능성과 해당 위험이 발생할 경우 프로젝트에 대한 결과를 설정하는 것이 포함됩니다. 발생할 수 있는 위험이 발생할 경우 이를 피, 관리 또는 처리하기 위한 계획을 세워야 합니다.
+
+인력 관리에는 프로젝트 작업에 적합한 사람을 선택하고 팀과 작업 환경을 구성하는 것이 포함됩니다.
+사람들은 다른 사람들과의 상호작용, 경영진과 동료들의 인정, 개인적 발전의 기회 제공을 통해 동기를 부여받습니다.
+소프트웨어 개발 그룹은 상당히 작고 응집력이 있어야 합니다. 그룹의 효율성에 영향을 미치는 핵심 요소는 해당 그룹에 속한 사람들, 그룹이 구성되는 방식 및 그룹 구성원 간의 의사 소통입니다.
+그룹 내 의사소통은 그룹 구성원의 상태, 그룹 규모, 그룹의 성별 구성, 성격 및 사용 가능한 의사소통 채널과 같은 요인의 영향을 받습니다.
