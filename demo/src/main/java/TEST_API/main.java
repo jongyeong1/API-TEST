@@ -64,8 +64,8 @@ public class main {
     public static void main(String[] args) throws URISyntaxException, IOException, InvalidKeyException, ParseException {
         
         //test test_api = new test();
-        devTest test_api = new devTest();
-        //prodTest test_api = new prodTest();
+        //devTest test_api = new devTest();
+        prodTest test_api = new prodTest();
         //redirectTest test_api = new redirectTest();
         //webTest test_api = new webTest();
 
