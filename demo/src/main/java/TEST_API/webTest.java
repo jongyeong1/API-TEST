@@ -1,6 +1,7 @@
 package TEST_API;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -71,9 +72,24 @@ public class webTest {
 
         Encoder encode = Base64.getEncoder();
         Decoder decode = Base64.getDecoder();
+        String originalStr = encText;
 
         key = new String(encode.encode(key.getBytes()));
         encText = new String(encode.encode(encText.getBytes()));
+
+        byte[] bytes = originalStr.getBytes("utf-8");
+        originalStr = new String(bytes);
+
+        String[] charSet = {"utf-8", "euc-kr", "ksc5601", "iso-8859-1", "x-windows-949"};
+        for(int i = 0; i<charSet.length; i++){
+	        for(int j = 0; j<charSet.length; j++){
+	        	try{ 
+		        	System.out.println("[" + charSet[i] + "," + charSet[j] + "]" + new String(originalStr.getBytes(charSet[i]), charSet[j]));
+		        } catch (UnsupportedEncodingException e){
+			        e.printStackTrace();
+        		}
+	        }
+        }
 
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
         configureHttpClient2(httpClientBuilder);
@@ -179,7 +195,7 @@ public class webTest {
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
         configureHttpClient2(httpClientBuilder);
         String rtn_msg = "";
-        String reqIp = "203.243.39.19";
+        String reqIp = "dlv.koroad.or.kr";
         RedirectStrategy Re_url = new DefaultRedirectStrategy();
         CloseableHttpClient client = httpClientBuilder.setRedirectStrategy(Re_url)
                 .build();
@@ -197,7 +213,7 @@ public class webTest {
                 "\"f_from_date\" : \"" + request_date + "\"," +
                 "\"f_to_date\" : \"" + request_date + "\"}";
         
-        String client_secret = "b9e8207f657fc4681653dd4bc728ce83e8687c43ebfaead9d5969bc6e2ccbc99";
+        String client_secret = "1babd46e42d11d9b953e5c8cf74bdfbc0ed8e08e0e733259a529a4f89401d21b";
         String encStr = libcall(client_secret,jsonBody);
         System.out.println("암호화 데이터");
         System.out.println(encStr);
@@ -207,7 +223,7 @@ public class webTest {
                 + new String(encode.encode("1234567890:1234565".getBytes())) + "\"},\"body\" : \"" + encStr + "\"}";
 
         URIBuilder builder = new URIBuilder();
-        builder.setScheme("http").setHost(reqIp).setPath("/api/onevalidatorv2.do");
+        builder.setScheme("https").setHost(reqIp).setPath("/api/onevalidatorv2.do");
         URI uri = builder.build();
         HttpPost httpPost = new HttpPost(uri);
         System.out.println(httpPost.getURI());
@@ -255,17 +271,17 @@ public class webTest {
                     .build();
 
             Map<String, Object> jsonMap = new HashMap<String, Object>();
-            String client_id = "41b74fc6-bef6-4402-9a66-c12748b91a6c";
-            String client_secret = "b9e8207f657fc4681653dd4bc728ce83e8687c43ebfaead9d5969bc6e2ccbc99";
+            String client_id = "84485bc9-3315-473f-9629-a55fa786b4f9";
+            String client_secret = "1babd46e42d11d9b953e5c8cf74bdfbc0ed8e08e0e733259a529a4f89401d21b";
 
             String authHeader = OAuth2ClientUtil.generateBasicAuthHeaderString(client_id, client_secret);
 
             System.out.println("토큰발급 시작");
             try {
-                String reqIp = "203.243.39.19";
+                String reqIp = "dlv.koroad.or.kr";
 
                 URIBuilder builder = new URIBuilder();
-                builder.setScheme("http").setHost(reqIp).setPath("/oauth2/token2")
+                builder.setScheme("https").setHost(reqIp).setPath("/oauth2/token2")
                         .setParameter("grantType", "password");
                 URI uri = builder.build();
                 HttpGet httpget = new HttpGet(uri);

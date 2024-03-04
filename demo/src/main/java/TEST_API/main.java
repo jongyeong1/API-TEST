@@ -70,7 +70,7 @@ public class main {
         //webTest test_api = new webTest();
 
         String result = "";
-
+  
         try{
             result= test_api.TestStart();
             System.out.println(result);
@@ -80,6 +80,7 @@ public class main {
         } catch (Exception e){
             System.out.println("에러발생");
         }
+        
         
     }
 

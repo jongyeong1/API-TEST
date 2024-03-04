@@ -11,6 +11,8 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultRedirectStrategy;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -36,6 +38,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class prodTest {
+
+    private static Log logger = LogFactory.getLog(prodTest.class);
 
     public static void configureHttpClient2(HttpClientBuilder clientBuilder) {
         try {
@@ -68,6 +72,7 @@ public class prodTest {
 
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();
         configureHttpClient2(httpClientBuilder);
+        logger.debug(httpClientBuilder, null);
         String rtn_msg = "";
         String reqIp = "dlv.koroad.or.kr";
         RedirectStrategy Re_url = new DefaultRedirectStrategy();
@@ -78,25 +83,26 @@ public class prodTest {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         String request_date = format.format(now);
 
-        String authHeader = OAuth2ClientUtil.generateBearerTokenHeaderString(access_token);
-        String jsonBody = "{\"f_license_no\" : \"151900335100\"," +
-                "\"f_resident_name\" : \"이종영\"," +
-                "\"f_resident_date\" : \"970323\"," +
-                "\"f_seq_no\" : \"123456\"," +
-                "\"f_licn_con_code\" : \"32\"," +
-                "\"f_from_date\" : \"" + request_date + "\"," +
-                "\"f_to_date\" : \"" + request_date + "\"}";
-        // String jsonBody = "{\"f_license_no\" : \"149701461921\"," +
-        //         "\"f_resident_name\" : \"성낙석\"," +
+        String authHeader = "Bearer " + access_token;//OAuth2ClientUtil.generateBearerTokenHeaderString(access_token);
+        System.out.println(authHeader);
+        // String jsonBody = "{\"f_license_no\" : \"151900335100\"," +
+        //         "\"f_resident_name\" : \"이종영\"," +
         //         "\"f_resident_date\" : \"970323\"," +
         //         "\"f_seq_no\" : \"123456\"," +
         //         "\"f_licn_con_code\" : \"32\"," +
         //         "\"f_from_date\" : \"" + request_date + "\"," +
-        //         "\"f_to_date\"  : \"20231212\"}";
+        //         "\"f_to_date\" : \"" + request_date + "\"}";
+        String jsonBody = "{\"f_license_no\" : \"179700917740\"," +
+                "\"f_resident_name\" : \"조혜경\"," +
+                "\"f_resident_date\" : \"970323\"," +
+                "\"f_seq_no\" : \"123456\"," +
+                "\"f_licn_con_code\" : \"12\"," +
+                "\"f_from_date\" : \"20240810\"," +
+                "\"f_to_date\"  : \"20240810\"}";
 
         String client_secret = "1babd46e42d11d9b953e5c8cf74bdfbc0ed8e08e0e733259a529a4f89401d21b";
         ARIACipher256 ac = new ARIACipher256(Base64.encode(client_secret.getBytes()));
-        byte[] encBody = ac.encrypt(jsonBody.getBytes("UTF-8"));
+        byte[] encBody = ac.encrypt(jsonBody.getBytes("EUC-KR"));
         String encStr = Base64.encode(encBody);
         System.out.println("암호화 데이터");
         System.out.println(encStr);
@@ -106,7 +112,7 @@ public class prodTest {
                 + Base64.encode("1234567890:1234565".getBytes()) + "\"},\"body\" : \"" + encStr + "\"}";
 
         URIBuilder builder = new URIBuilder();
-        builder.setScheme("https").setHost(reqIp).setPath("/api/onevalidatorv4.do");
+        builder.setScheme("https").setHost(reqIp).setPath("/api/onevalidatorv2.do");
         URI uri = builder.build();
         HttpPost httpPost = new HttpPost(uri);
         System.out.println(httpPost.getURI());
